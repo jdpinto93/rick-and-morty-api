@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import Header from './componets/Header';
+import Chracter from './pages/Chracters';
+import HomeApp from './pages/Home';
+import ChracterU from "./pages/ChracterU";
+import Footer from './componets/Footer';
+import Container from '@mui/material/Container';
 
-function App() {
+function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+    <Header />
+
+    <Container maxWidth="xl">
+        <Router>
+          <Routes>
+            <Route exact path="/" element={<HomeApp />} />
+            <Route path="/characters" element={<Chracter />} />
+            <Route path="/character/:id" element={<ChracterU />} />
+          </Routes>
+        </Router>    
+    </Container>
+
+    <Footer />
+
+  </>
+
   );
 }
-
 export default App;
