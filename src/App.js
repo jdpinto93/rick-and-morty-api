@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './componets/Header';
 import Chracter from './pages/Chracters';
@@ -13,13 +13,11 @@ function App () {
     <Header />
 
     <Container maxWidth="xl">
-        <Router>
           <Routes>
             <Route exact path="/" element={<HomeApp />} />
             <Route path="/characters" element={<Chracter />} />
             <Route path="/character/:id" element={<ChracterU />} />
-          </Routes>
-        </Router>    
+          </Routes>    
     </Container>
 
     <Footer />

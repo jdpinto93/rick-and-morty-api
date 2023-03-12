@@ -27,7 +27,9 @@ const Home = () => {
                         <Button 
                             component={ Link }
                             to="/characters"
-                            variant="outlined" 
+                            variant="outlined"
+                            size="large"
+                            color="secondary"
                             endIcon={<SendIcon />}>
                             View Characters
                         </Button>
